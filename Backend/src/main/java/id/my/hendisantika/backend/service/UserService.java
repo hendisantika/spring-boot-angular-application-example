@@ -41,4 +41,9 @@ public class UserService {
     public User findById(int id) {
         return this.userRepository.findById(id).get();
     }
+
+    public User updateUser(int id, User userVO) {
+        userVO.setId(id);
+        return this.userRepository.save(userVO);
+    }
 }
