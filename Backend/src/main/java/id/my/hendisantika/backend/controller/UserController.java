@@ -5,6 +5,7 @@ import id.my.hendisantika.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,5 +56,11 @@ public class UserController {
     @ResponseStatus(value = HttpStatus.OK)
     public User updateUser(@PathVariable int id, @RequestBody User userVO) {
         return this.userService.updateUser(id, userVO);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void deleteUser(@PathVariable int id) {
+        this.userService.delete(id);
     }
 }
