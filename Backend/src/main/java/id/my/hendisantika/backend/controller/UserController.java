@@ -5,11 +5,14 @@ import id.my.hendisantika.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,5 +35,11 @@ public class UserController {
     @ResponseStatus(value = HttpStatus.CREATED)
     public User registerUser(@RequestBody User userVO) {
         return this.userService.insert(userVO);
+    }
+
+    @GetMapping
+    @ResponseStatus(value = HttpStatus.OK)
+    public List<User> findAllUser() {
+        return this.userService.findAll();
     }
 }
