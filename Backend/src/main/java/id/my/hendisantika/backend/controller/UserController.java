@@ -1,9 +1,14 @@
 package id.my.hendisantika.backend.controller;
 
+import id.my.hendisantika.backend.entity.User;
 import id.my.hendisantika.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -22,4 +27,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+
+    @PostMapping
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public User registerUser(@RequestBody User userVO) {
+        return this.userService.insert(userVO);
+    }
 }
