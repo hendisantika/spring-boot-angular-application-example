@@ -1,0 +1,4 @@
+06:57:45.636 [ApplicationImpl pooled thread 12] INFO  c.b.l.BrowserStackRunExtension - spring boot
+06:57:45.636 [ApplicationImpl pooled thread 12] INFO  com.browserstack.utils.Helpers - null
+06:59:16.280 [ApplicationImpl pooled thread 11] INFO  c.b.l.BrowserStackRunExtension - spring boot
+06:59:16.281 [ApplicationImpl pooled thread 11] INFO  com.browserstack.utils.Helpers - null
