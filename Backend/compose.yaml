@@ -1,2 +1,16 @@
 version: "3.9"
 services:
+  mysql:
+    container_name: mysql8
+    image: mysql:8.3
+    volumes:
+      - "./db-data:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: users
+      MYSQL_ROOT_PASSWORD: Yuji2024!
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3307:3306"
+    restart: always
+    labels:
+      org.springframework.boot.service-connection: mysql
