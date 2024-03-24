@@ -1,1 +1,22 @@
-<p>user-update works!</p>
+<div class="container">
+  <h2 class="text-center">Update User</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName"> First Name</label>
+      <input [(ngModel)]="user.firstName" class="form-control" id="firstName" name="firstName" type="text">
+    </div>
+    <div class="form-group">
+      <label for="lastName"> Last Name</label>
+      <input [(ngModel)]="user.lastName" class="form-control" id="lastName" name="lastName" type="text">
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input [(ngModel)]="user.username" class="form-control" id="username" name="username" type="text">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input [(ngModel)]="user.password" class="form-control" id="password" name="password" type="password">
+    </div>
+    <button class="btn btn-success mt-2" type="submit">Update</button>
+  </form>
+</div>
