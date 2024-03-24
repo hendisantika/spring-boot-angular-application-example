@@ -8,28 +8,28 @@ import {User} from "../user.model";
 })
 export class UserService {
 
-  private basUrl = "http://localhost:8081/user"
+  private baseUrl = "http://localhost:8081/user"
 
   constructor(private httpClient: HttpClient) {
   }
 
   getUserList(): Observable<User[]> {
-    return this.httpClient.get<User[]>(`${this.basUrl}`);
+    return this.httpClient.get<User[]>(`${this.baseUrl}`);
   }
 
   createUser(user: User): Observable<Object> {
-    return this.httpClient.post(`${this.basUrl}`, user);
+    return this.httpClient.post(`${this.baseUrl}`, user);
   }
 
   getUserById(id: number): Observable<User> {
-    return this.httpClient.get<User>(`${this.basUrl}/${id}`);
+    return this.httpClient.get<User>(`${this.baseUrl}/${id}`);
   }
 
   updateUser(id: number, user: User): Observable<Object> {
-    return this.httpClient.put(`${this.basUrl}/${id}`, user);
+    return this.httpClient.put(`${this.baseUrl}/${id}`, user);
   }
 
   deleteUser(id: number): Observable<Object> {
-    return this.httpClient.delete(`${this.basUrl}/${id}`);
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 }
