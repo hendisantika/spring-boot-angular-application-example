@@ -1,20 +1,26 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {UserService} from '../services/user.service';
-import {User} from '../user.model';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
+import { User } from '../user.model';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-update',
   templateUrl: './user-update.component.html',
-  styleUrls: ['./user-update.component.css']
+  standalone: true,
+  imports: [FormsModule, HttpClientModule],
+  styleUrls: ['./user-update.component.css'],
 })
 export class UserUpdateComponent implements OnInit {
   id!: number;
   user: User = new User();
 
-  constructor(private userService: UserService,
-              private route: ActivatedRoute, private router: Router) {
-  }
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getUserById();
@@ -28,7 +34,7 @@ export class UserUpdateComponent implements OnInit {
       },
       error: (e) => {
         console.log(e);
-      }
+      },
     });
   }
 
@@ -49,7 +55,7 @@ export class UserUpdateComponent implements OnInit {
       },
       error: (e) => {
         console.log(e);
-      }
+      },
     });
   }
 }
