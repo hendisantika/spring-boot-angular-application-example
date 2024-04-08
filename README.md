@@ -17,7 +17,7 @@ Home Page
 
 Add New User
 
-![Add New User](img/new.png "Add New User)
+![Add New User](img/new.png "Add New User")
 
 User List
 
